@@ -1,26 +1,31 @@
+// server.js
+const express = require("express");
+const cors = require("cors");
+const dotenv = require("dotenv");
+const helmet = require("helmet");
+const connectDB = require("./config/db");
 
-import express from "express";
-import cors from "cors";
-import dotenv from "dotenv";
-import helmet from "helmet";
-import connectDB from "./config/db.js"; 
-
-
-import authRoutes from "./routes/authRoutes.js";
-import dashboardRoutes from "./routes/dashboardRoutes.js";
-import jobRoutes from "./routes/job.routes.js";
+// Routes
+const authRoutes = require("./routes/authRoutes");
+const dashboardRoutes = require("./routes/dashboardRoutes");
+const jobRoutes = require("./routes/job.routes");
 
 dotenv.config();
 
-
+// Connect Database
 connectDB();
 
 const app = express();
 
 // Middlewares
-app.use(cors({ origin: process.env.CLIENT_URL })); 
-app.use(express.json()); 
-app.use(helmet()); 
+app.use(
+  cors({
+    origin: process.env.CLIENT_URL, // Only allow your frontend URL
+    credentials: true, // Allow cookies, auth headers
+  })
+);
+app.use(express.json());
+app.use(helmet());
 
 // Routes
 app.use("/api/auth", authRoutes);
@@ -37,7 +42,7 @@ app.use((req, res) => {
   res.status(404).json({ message: "Route not found" });
 });
 
-// Error handler (optional, for server errors)
+// Global error handler
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).json({ message: "Internal Server Error" });

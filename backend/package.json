@@ -1,9 +1,8 @@
 {
-  "name": "backend",
+  "name": "jobhunt-pro-backend",
   "version": "1.0.0",
-  "description": "JobHunt Pro Backend",
+  "description": "JobHunt Pro Backend - MERN Stack",
   "main": "server.js",
-  "type": "module",
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js"
@@ -22,5 +21,15 @@
   },
   "engines": {
     "node": ">=18.0.0"
-  }
+  },
+  "keywords": [
+    "MERN",
+    "Backend",
+    "JobHunt Pro",
+    "Express",
+    "MongoDB",
+    "Node.js"
+  ],
+  "author": "sneara parvin",
+  "license": "MIT"
 }
