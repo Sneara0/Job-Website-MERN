@@ -7,32 +7,29 @@ export default function Home() {
   return (
     <div className="w-full min-h-screen bg-gradient-to-b from-blue-50 via-white to-gray-50 flex flex-col items-center relative overflow-hidden">
 
-     
+      {/* Floating Decorative Shapes */}
       <div className="absolute -top-32 -left-32 w-72 h-72 bg-blue-300 rounded-full opacity-30 animate-spin-slow"></div>
       <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-pink-300 rounded-full opacity-20 animate-spin-slow"></div>
       <div className="absolute top-1/3 right-0 w-48 h-48 bg-purple-300 rounded-full opacity-25 animate-pulse-slow"></div>
+      <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 animate-spin-slow"></div>
+      <div className="absolute bottom-0 right-0 w-48 h-48 bg-pink-200 rounded-full opacity-15 animate-pulse-slow"></div>
+  {/* Stats Section: Total Jobs & Companies */}
+      <section className="mt-20 px-6 md:px-20 text-center z-10">
+        <div className="flex flex-col sm:flex-row justify-center gap-8">
+          {/* Total Jobs */}
+          <div className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 rounded-full w-40 h-40 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+            <h3 className="text-3xl md:text-4xl font-bold text-white">12,000+</h3>
+            <p className="text-white mt-2 font-medium">{t("home.totalJobs")}</p>
+          </div>
 
-     
-      <section className="flex flex-col items-center justify-center text-center px-6 md:px-20 py-32 z-10 max-w-4xl">
-        
-        <h1 className="text-5xl md:text-6xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 animate-gradient-x">
-          {t("home.welcome")}
-        </h1>
-
-        <p className="text-gray-700 text-lg md:text-xl mt-6 leading-relaxed">
-          {t("home.tagline")}. {t("home.exploreJobs")} 
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-6 mt-10 justify-center">
-          <button className="bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:bg-blue-700 transition transform hover:scale-105">
-            {t("home.exploreJobs")}
-          </button>
-          <button className="bg-white border border-blue-600 text-blue-600 px-8 py-3 rounded-lg shadow hover:bg-blue-50 transition transform hover:scale-105">
-            {t("home.learnMore")}
-          </button>
+          {/* Companies */}
+          <div className="bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 rounded-full w-40 h-40 flex flex-col items-center justify-center shadow-lg hover:shadow-2xl transition transform hover:scale-105">
+            <h3 className="text-3xl md:text-4xl font-bold text-white">500</h3>
+            <p className="text-white mt-2 font-medium">{t("home.companies")}</p>
+          </div>
         </div>
-
       </section>
+    
 
       {/* Career Future Section */}
       <section className="mt-20 px-6 md:px-20 text-center max-w-3xl z-10">
@@ -44,10 +41,11 @@ export default function Home() {
         </p>
       </section>
 
- 
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-purple-200 rounded-full opacity-20 animate-spin-slow"></div>
-      <div className="absolute bottom-0 right-0 w-48 h-48 bg-pink-200 rounded-full opacity-15 animate-pulse-slow"></div>
+    
 
+      {/* Decorative Shapes Overlays */}
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-yellow-300 rounded-full opacity-10 animate-spin-slow"></div>
+      <div className="absolute bottom-1/4 right-1/3 w-36 h-36 bg-green-300 rounded-full opacity-10 animate-pulse-slow"></div>
     </div>
   );
 }

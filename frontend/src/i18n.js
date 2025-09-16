@@ -37,8 +37,8 @@ const resources = {
       home: {
         welcome: "Welcome to WorkBridge",
         tagline: "Find your dream job easily",
-        exploreJobs: "Explore Jobs",
-        learnMore: "Learn More",
+        totalJobs: "Total Posted Jobs",
+           companies: "Companies",
         careerFuture: "Your Career, Your Future",
         careerFutureDesc:
           "WorkBridge brings all job opportunities under one roof. Apply quickly, track your applications, and land your dream role effortlessly.",
@@ -266,8 +266,9 @@ const resources = {
       home: {
         welcome: "ওয়ার্কব্রিজ এ স্বাগতম",
         tagline: "সহজেই আপনার স্বপ্নের চাকরি খুঁজুন",
-        exploreJobs: "চাকরি দেখুন",
-        learnMore: "আরও জানুন",
+        totalJobs: "মোট পোস্টকৃত চাকরি",
+         companies: "কোম্পানি",
+       
         careerFuture: "আপনার ক্যারিয়ার, আপনার ভবিষ্যত",
         careerFutureDesc:
           "ওয়ার্কব্রিজ সমস্ত চাকরির সুযোগ একত্রিত করে। দ্রুত আবেদন করুন, আপনার অ্যাপ্লিকেশন ট্র্যাক করুন এবং সহজেই আপনার স্বপ্নের চাকরি অর্জন করুন।",
