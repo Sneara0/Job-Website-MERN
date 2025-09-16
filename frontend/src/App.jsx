@@ -14,6 +14,7 @@ import Mission from "./pages/About/Mission.jsx";
 import Values from "./pages/About/Values.jsx";
 import Team from "./pages/About/Team";
 
+import Advertise from "./components/Advertise.jsx"
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -21,9 +22,11 @@ function App() {
     <>
       <Navbar/>
       
+      
 
       <Routes>
         <Route path="/" element={<Home />} />
+
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
@@ -47,6 +50,7 @@ function App() {
           }
         />
       </Routes>
+      <Advertise/>
       <Footer/>
     </>
   );
