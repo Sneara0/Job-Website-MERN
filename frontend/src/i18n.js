@@ -28,11 +28,14 @@ const resources = {
         logout: "Logout",
       },
       jobs: {
-        title: "Jobs",
-        salary: "Salary",
-        type: "Job Type",
-        fetchError: "Error fetching jobs",
-        noJobs: "No jobs available",
+         "title": "Available Jobs",
+    "loading": "Loading jobs...",
+    "error": "Failed to fetch jobs. Please try again.",
+    "noJobs": "No jobs available at the moment.",
+    "salary": "Salary",
+    "type": "Job Type",
+    "applyNow": "Apply Now"
+        
       },
       home: {
         welcome: "Welcome to WorkBridge",
@@ -42,6 +45,11 @@ const resources = {
         careerFuture: "Your Career, Your Future",
         careerFutureDesc:
           "WorkBridge brings all job opportunities under one roof. Apply quickly, track your applications, and land your dream role effortlessly.",
+          trustedCompanies: "Trusted by Leading Companies",
+           largestJobSite: "The Largest Job Site in Bangladesh",
+        trustedBy: "1 Million+ Job Seekers trust WorkBridge to find their dreams",
+        exploreJobs: "New Job Circulars in Dhaka – Explore Trending Jobs on WorkBridge",
+        moreJobs: "More Jobs",
       },
       register: {
         title: "Register",
@@ -79,6 +87,9 @@ const resources = {
         phone: "Phone: +880 1234 567890",
         rights: "All rights reserved.",
       },
+
+
+     
       servicesPage: {
         webdev: {
           title: "Web Development",
@@ -229,6 +240,10 @@ const resources = {
         partTime: "Part-time",
         internship: "Internship",
       },
+      
+       trusted: {
+       title: "Trusted by Leading Companies",
+    },
     },
   },
   bn: {
@@ -257,11 +272,13 @@ const resources = {
         logout: "লগআউট",
       },
       jobs: {
-        title: "চাকরির তালিকা",
-        salary: "বেতন",
-        type: "চাকরির ধরন",
-        fetchError: "চাকরি লোড করতে সমস্যা হয়েছে",
-        noJobs: "কোনো চাকরি পাওয়া যায়নি",
+        "title": "উপলব্ধ চাকরি",
+    "loading": "চাকরি লোড হচ্ছে...",
+    "error": "চাকরি লোড করা যায়নি। আবার চেষ্টা করুন।",
+    "noJobs": "এই মুহূর্তে কোন চাকরি খালি নেই।",
+    "salary": "বেতন",
+    "type": "চাকরির ধরন",
+    "applyNow": "আবেদন করুন"
       },
       home: {
         welcome: "ওয়ার্কব্রিজ এ স্বাগতম",
@@ -272,6 +289,11 @@ const resources = {
         careerFuture: "আপনার ক্যারিয়ার, আপনার ভবিষ্যত",
         careerFutureDesc:
           "ওয়ার্কব্রিজ সমস্ত চাকরির সুযোগ একত্রিত করে। দ্রুত আবেদন করুন, আপনার অ্যাপ্লিকেশন ট্র্যাক করুন এবং সহজেই আপনার স্বপ্নের চাকরি অর্জন করুন।",
+           trustedCompanies: "প্রখ্যাত কোম্পানিগুলোর দ্বারা বিশ্বাসযোগ্য",
+            largestJobSite: "বাংলাদেশের সর্ববৃহৎ চাকরির সাইট",
+        trustedBy: "১০ লক্ষাধিক চাকরি প্রার্থীরা WorkBridge এ বিশ্বাস করে তাদের স্বপ্নের চাকরি খুঁজে পেতে",
+        exploreJobs: "ঢাকায় নতুন চাকরির বিজ্ঞপ্তি – WorkBridge এ ট্রেন্ডিং চাকরি দেখুন",
+        moreJobs: "আরও চাকরি",
       },
       register: {
         title: "রেজিস্টার",
@@ -461,6 +483,9 @@ const resources = {
         partTime: "আংশিককালীন",
         internship: "ইন্টার্নশিপ",
       },
+      trusted: {
+      title: "প্রখ্যাত কোম্পানির দ্বারা বিশ্বাসযোগ্য",
+    },
     },
   },
 };

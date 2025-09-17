@@ -8,14 +8,14 @@ const authMiddleware = (req, res, next) => {
   }
 
   const token = authHeader.split(" ")[1];
-  console.log("Token received:", token); // এখানে Token দেখা যাবে
+  console.log("Token received:", token); 
 
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
     next();
   } catch (error) {
-    console.log("JWT verify error:", error.message); // Error message দেখাবে
+    console.log("JWT verify error:", error.message); 
     res.status(401).json({ message: "Invalid token" });
   }
 };

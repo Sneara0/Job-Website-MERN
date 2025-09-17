@@ -1,6 +1,6 @@
 const Job = require("../models/job.model.js");
 
-// Add Job
+
 const addJob = async (req, res) => {
   try {
     const { title, company, location, salary, description } = req.body;

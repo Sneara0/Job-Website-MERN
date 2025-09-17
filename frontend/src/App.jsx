@@ -13,6 +13,8 @@ import Overview from "./pages/About/Overview.jsx";
 import Mission from "./pages/About/Mission.jsx";
 import Values from "./pages/About/Values.jsx";
 import Team from "./pages/About/Team";
+import TrustedCompanies from './components/TrustedCompanies.jsx';
+import FeaturedJobs from "./components/FeaturedJobs.jsx"
 
 import Advertise from "./components/Advertise.jsx"
 import { Routes, Route } from "react-router-dom";
@@ -51,6 +53,9 @@ function App() {
         />
       </Routes>
       <Advertise/>
+      <TrustedCompanies/>
+      <FeaturedJobs/>
+
       <Footer/>
     </>
   );

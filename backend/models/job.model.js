@@ -23,7 +23,7 @@ const jobSchema = new mongoose.Schema(
     },
     type: {
       type: String,
-      default: "Full-time", // optional
+      default: "Full-time", 
     },
     description: {
       type: String,

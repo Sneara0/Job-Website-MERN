@@ -68,7 +68,7 @@ export default function Navbar() {
 
   return (
     <div className="relative">
-      <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg sticky top-0 z-50 backdrop-blur-sm">
+      <nav className="bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 shadow-lg sticky top-2 z-50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Link to="/" className="flex items-center space-x-3">
@@ -90,7 +90,7 @@ export default function Navbar() {
                     onMouseEnter={() => setOpenDropdown(key)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button className="flex items-center font-semibold text-white hover:text-yellow-300 transition-colors">
+                    <button className="flex items-center font-semibold text-white hover:text-black transition-colors">
                       {t(`navbar.${key}`)}
                       <ChevronDownIcon className="ml-1 h-4 w-4" />
                     </button>
@@ -100,7 +100,7 @@ export default function Navbar() {
                           <Link
                             key={item.key}
                             to={item.path}
-                            className="block px-4 py-2 text-gray-700 hover:bg-yellow-100 hover:text-yellow-600 transition-colors"
+                            className="block px-4 py-2 text-gray-700 hover:text-black hover:bg-gray-100 transition-colors"
                           >
                             {t(`navbar.${item.key}`)}
                           </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <Link
                     key={key}
                     to={path}
-                    className="font-semibold text-white hover:text-yellow-300 transition-colors"
+                    className="font-semibold text-white hover:text-black transition-colors"
                   >
                     {t(`navbar.${key}`)}
                   </Link>
@@ -139,7 +139,7 @@ export default function Navbar() {
             <div className="flex md:hidden items-center">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="text-white hover:text-yellow-300"
+                className="text-white hover:text-black"
               >
                 {isOpen ? <XMarkIcon className="h-6 w-6" /> : <Bars3Icon className="h-6 w-6" />}
               </button>
@@ -161,7 +161,7 @@ export default function Navbar() {
                   <Link
                     key={item.key}
                     to={item.path}
-                    className="block ml-4 text-white hover:text-yellow-300 py-1 transition-colors"
+                    className="block ml-4 text-white hover:text-black py-1 transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
                     {t(`navbar.${item.key}`)}
@@ -172,7 +172,7 @@ export default function Navbar() {
               <Link
                 key={key}
                 to={path}
-                className="block text-white font-semibold hover:text-yellow-300 py-1 transition-colors"
+                className="block text-white font-semibold hover:text-black py-1 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {t(`navbar.${key}`)}

@@ -5,7 +5,7 @@ const adminMiddleware = (req, res, next) => {
     });
   }
 
-  // If user is admin, allow next step
+
   next();
 };
 
