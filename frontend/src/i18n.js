@@ -26,6 +26,9 @@ const resources = {
         login: "Login",
         register: "Register",
         logout: "Logout",
+         workbridgeVideoTitle: "About WorkBridge Company",
+  workbridgeVideoDesc: "Watch this short video to know how WorkBridge helps thousands of job seekers.",
+  videoNotSupported: "Your browser does not support the video tag."
       },
       jobs: {
          "title": "Available Jobs",
@@ -217,12 +220,13 @@ const resources = {
         },
         team: {
           title: "Meet Our Team",
-          members: [
-            { name: "John Doe", role: "CEO & Founder" },
-            { name: "Sarah Lee", role: "Chief Technology Officer" },
-            { name: "David Kim", role: "Lead Developer" },
-            { name: "Emma Watson", role: "UI/UX Designer" },
-          ],
+          "members": [
+          { "name": "John Doe", "role": "CEO & Founder", "desc": "Leads the company with strategy and vision." },
+          { "name": "Sarah Lee", "role": "Chief Technology Officer", "desc": "Oversees all technical operations." },
+          { "name": "David Kim", "role": "Lead Developer", "desc": "Develops and maintains core products." },
+          { "name": "Emma Watson", "role": "UI/UX Designer", "desc": "Designs intuitive and attractive interfaces." }
+        ]
+
         },
       },
       postJob: {
@@ -270,6 +274,9 @@ const resources = {
         login: "লগইন",
         register: "রেজিস্টার",
         logout: "লগআউট",
+        workbridgeVideoTitle: "WorkBridge কোম্পানি সম্পর্কে",
+        workbridgeVideoDesc: "এই ছোট ভিডিওতে দেখুন কিভাবে WorkBridge হাজারো চাকরি প্রার্থীকে সহায়তা করছে।",
+       videoNotSupported: "আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।"
       },
       jobs: {
         "title": "উপলব্ধ চাকরি",
@@ -294,6 +301,7 @@ const resources = {
         trustedBy: "১০ লক্ষাধিক চাকরি প্রার্থীরা WorkBridge এ বিশ্বাস করে তাদের স্বপ্নের চাকরি খুঁজে পেতে",
         exploreJobs: "ঢাকায় নতুন চাকরির বিজ্ঞপ্তি – WorkBridge এ ট্রেন্ডিং চাকরি দেখুন",
         moreJobs: "আরও চাকরি",
+
       },
       register: {
         title: "রেজিস্টার",
@@ -460,12 +468,12 @@ const resources = {
         },
         team: {
           title: "আমাদের টিমকে জানুন",
-          members: [
-            { name: "জন ডো", role: "সিইও ও প্রতিষ্ঠাতা" },
-            { name: "সারাহ লি", role: "প্রধান প্রযুক্তি কর্মকর্তা" },
-            { name: "ডেভিড কিম", role: "লিড ডেভেলপার" },
-            { name: "এমা ওয়াটসন", role: "ইউআই/ইউএক্স ডিজাইনার" },
-          ],
+           "members": [
+          { "name": "জন ডো", "role": "সিইও ও প্রতিষ্ঠাতা", "desc": "জন ডো কোম্পানিকে কৌশল এবং দৃষ্টিভঙ্গি দিয়ে নেতৃত্ব দেন।" },
+          { "name": "সারাহ লি", "role": "প্রধান প্রযুক্তি কর্মকর্তা", "desc": "সারাহ লি সমস্ত প্রযুক্তিগত অপারেশন পরিচালনা করেন।" },
+          { "name": "ডেভিড কিম", "role": "লিড ডেভেলপার", "desc": "ডেভিড কিম আমাদের মূল প্রোডাক্টগুলো ডেভেলপ ও মেইনটেইন করেন।" },
+          { "name": "এমা ওয়াটসন", "role": "UI/UX ডিজাইনার", "desc": "এমা ওয়াটসন ব্যবহারকারীদের জন্য ইন্টুইটিভ এবং আকর্ষণীয় ইন্টারফেস ডিজাইন করেন।" }
+        ]
         },
       },
       postJob: {

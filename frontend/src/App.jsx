@@ -16,6 +16,7 @@ import Team from "./pages/About/Team";
 import TrustedCompanies from './components/TrustedCompanies.jsx';
 import FeaturedJobs from "./components/FeaturedJobs.jsx"
 
+
 import Advertise from "./components/Advertise.jsx"
 import { Routes, Route } from "react-router-dom";
 
@@ -55,6 +56,7 @@ function App() {
       <Advertise/>
       <TrustedCompanies/>
       <FeaturedJobs/>
+    
 
       <Footer/>
     </>
