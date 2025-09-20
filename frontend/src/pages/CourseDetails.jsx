@@ -66,7 +66,7 @@ const CourseDetails = () => {
             ))}
           </div>
 
-          {/* Enroll Button */}
+ 
           <div className="mt-8">
             <button className="bg-gradient-to-r from-purple-600 to-pink-500 text-white px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:scale-105 transition transform">
               {t("enrollNow", "Enroll Now")}

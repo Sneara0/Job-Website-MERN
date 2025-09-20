@@ -9,7 +9,7 @@ const HireSection = () => {
   return (
     <section className="w-full py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        {/* === Text Section === */}
+        
         <div className="md:w-1/2">
           <h2 className="text-4xl font-bold text-green-600 mb-4">
             {t("about.hire.title")}
