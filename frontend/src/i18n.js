@@ -254,19 +254,16 @@ const resources = {
         ]
 
         },
-        "hire": {
-    "title": "The Smart Way to Hire",
-    "subtitle": "Quick and Easy Job Posting in 2 Minutes",
-    "description": "Get access to connect with massive talent pool of 1,00,00+ Candidate resumes.",
-    "users": {
-      "number": "10,44,900",
-      "label": "App & Web Users"
-    },
-    "applications": {
-      "number": "50,27,214",
-      "label": "Job Applications"
-    }
-  }
+        hire: {
+          title: "The Smart Way to Hire",
+          subtitle: "Quick and Easy Job Posting in 2 Minutes",
+          description: "Get access to connect with massive talent pool of 1,00,00+ Candidate resumes.",
+          usersNumber: "10,44,900",
+          usersLabel: "App & Web Users",
+          applicationsNumber: "50,27,214",
+          applicationsLabel: "Job Applications"
+        }
+        
       },
       postJob: {
         title: "Post a Job",
@@ -540,6 +537,16 @@ const resources = {
           { "name": "এমা ওয়াটসন", "role": "UI/UX ডিজাইনার", "desc": "এমা ওয়াটসন ব্যবহারকারীদের জন্য ইন্টুইটিভ এবং আকর্ষণীয় ইন্টারফেস ডিজাইন করেন।" }
         ]
         },
+         hire: {
+          title: "স্মার্ট উপায়ে নিয়োগ দিন",
+          subtitle: "মাত্র ২ মিনিটে সহজ ও দ্রুত জব পোস্টিং",
+          description: "১,০০,০০+ প্রার্থীর রেজিউম ডাটাবেসে সংযুক্ত হওয়ার সুযোগ পান।",
+          usersNumber: "১০,৪৪,৯০০",
+          usersLabel: "অ্যাপ ও ওয়েব ব্যবহারকারী",
+          applicationsNumber: "৫০,২৭,২১৪",
+          applicationsLabel: "জব অ্যাপ্লিকেশন"
+        }
+
       },
       postJob: {
         title: "চাকরির পোস্ট",
@@ -556,14 +563,7 @@ const resources = {
         partTime: "আংশিককালীন",
         internship: "ইন্টার্নশিপ",
       },
-       "reviews": {
-    "title": "কর্মকর্তাদের রিভিউ",
-    "count": "রিভিউ",
-    "emp1": { "text": "জন ফ্রন্টএন্ড ডেভেলপমেন্টে অসাধারণ।" },
-    "emp2": { "text": "আয়েশার ডিজাইনে দারুণ চোখ আছে।" },
-    "emp3": { "text": "রাহিম ক্লিন ব্যাকএন্ড কোড লেখেন।" },
-    "emp4": { "text": "সোফিয়া প্রজেক্ট দক্ষভাবে পরিচালনা করেন।" }
-  },
+      
       trusted: {
       title: "প্রখ্যাত কোম্পানির দ্বারা বিশ্বাসযোগ্য",
     },
