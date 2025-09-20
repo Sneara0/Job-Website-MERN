@@ -30,7 +30,7 @@ export default function Team() {
               key={index}
               className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition transform hover:-translate-y-2 p-6"
             >
-              {/* Square image */}
+            
               <div className="w-28 h-28 mx-auto mb-4 overflow-hidden rounded-xl border-4 border-indigo-500 hover:border-pink-500 transition">
                 <img
                   src={member.img}
