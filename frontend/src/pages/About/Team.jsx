@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-// Images import
+
 import team1 from "../../assets/team/team2.jpeg";
 import team2 from "../../assets/team/team1.jpeg";
 import team3 from "../../assets/team/team3.jpeg";

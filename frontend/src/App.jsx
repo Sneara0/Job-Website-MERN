@@ -15,6 +15,8 @@ import Values from "./pages/About/Values.jsx";
 import Team from "./pages/About/Team";
 import TrustedCompanies from './components/TrustedCompanies.jsx';
 import FeaturedJobs from "./components/FeaturedJobs.jsx"
+import HireSection from './components/HireSection.jsx';
+
 
 
 import Advertise from "./components/Advertise.jsx"
@@ -56,6 +58,8 @@ function App() {
       <Advertise/>
       <TrustedCompanies/>
       <FeaturedJobs/>
+      <HireSection/>
+     
     
 
       <Footer/>

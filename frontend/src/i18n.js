@@ -201,14 +201,40 @@ const resources = {
         },
       },
       about: {
-        overview: {
-          title: "Company Overview",
-          desc: "WorkBridge is a platform that connects job seekers and companies...",
-        },
-        mission: {
-          title: "Our Mission",
-          desc: "Our mission is to bridge the gap between job seekers and employers by providing a smart, easy-to-use platform that helps people find their dream jobs and companies find the right talent.",
-        },
+         "overview": {
+      "title": "Company Overview",
+      "desc": "WorkBride is a leading job platform connecting employers with the right talents worldwide.",
+      "history_title": "Our History",
+      "history_desc": "Founded with a mission to simplify job searching, WorkBride has grown into a trusted platform helping thousands of people every day.",
+      "facts_title": "Quick Facts",
+      "facts_list": [
+        "Founded in 2024",
+        "500+ Partner Companies",
+        "12,000+ Active Jobs",
+        "Available in 2 Languages"
+      ],
+      "gallery_title": "Our Offices & Team",
+      "timeline_title": "Our Journey",
+      "timeline": [
+        { "year": "2024", "event": "Company founded with a vision to simplify job searching." },
+        { "year": "2025", "event": "Launched our advanced job portal with dual language support." },
+        { "year": "2026", "event": "Reached 1M+ users and expanded services internationally." },
+        { "year": "2027", "event": "Introduced AI-powered job matching system." }
+      ]
+    },
+        "mission": {
+      "title": "Our Mission",
+      "desc": "We aim to build the best job portal for job seekers and employers.",
+      "vision_title": "Our Vision",
+      "vision_desc": "To connect talents with opportunities worldwide.",
+      "values_title": "Our Core Values",
+      "values_list": [
+        "Integrity and transparency",
+        "Innovation and creativity",
+        "User-focused solutions",
+        "Collaboration and teamwork"
+      ]
+    },
         values: {
           title: "Our Core Values",
           items: [
@@ -228,6 +254,19 @@ const resources = {
         ]
 
         },
+        "hire": {
+    "title": "The Smart Way to Hire",
+    "subtitle": "Quick and Easy Job Posting in 2 Minutes",
+    "description": "Get access to connect with massive talent pool of 1,00,00+ Candidate resumes.",
+    "users": {
+      "number": "10,44,900",
+      "label": "App & Web Users"
+    },
+    "applications": {
+      "number": "50,27,214",
+      "label": "Job Applications"
+    }
+  }
       },
       postJob: {
         title: "Post a Job",
@@ -449,14 +488,40 @@ const resources = {
         },
       },
       about: {
-        overview: {
-          title: "কোম্পানির পরিচিতি",
-          desc: "WorkBridge একটি প্ল্যাটফর্ম যা চাকরিপ্রার্থী এবং কোম্পানিগুলোকে একত্রে যুক্ত করে...",
-        },
-        mission: {
-          title: "আমাদের লক্ষ্য",
-          desc: "আমাদের লক্ষ্য হলো চাকরিপ্রার্থী এবং নিয়োগকর্তার মধ্যে সেতুবন্ধন তৈরি করা। একটি সহজ ও স্মার্ট প্ল্যাটফর্মের মাধ্যমে মানুষকে তাদের স্বপ্নের চাকরি খুঁজে পেতে এবং কোম্পানিগুলোকে সঠিক প্রতিভা খুঁজে পেতে সহায়তা করা।",
-        },
+        "overview": {
+      "title": "কোম্পানি পরিচিতি",
+      "desc": "ওয়ার্কব্রাইড একটি শীর্ষস্থানীয় জব প্ল্যাটফর্ম যা নিয়োগকর্তা এবং সঠিক প্রতিভার মধ্যে সংযোগ স্থাপন করে।",
+      "history_title": "আমাদের ইতিহাস",
+      "history_desc": "চাকরি খোঁজা সহজ করার উদ্দেশ্যে প্রতিষ্ঠিত হয়ে, ওয়ার্কব্রাইড আজ হাজারো মানুষের আস্থার প্ল্যাটফর্মে পরিণত হয়েছে।",
+      "facts_title": "গুরুত্বপূর্ণ তথ্য",
+      "facts_list": [
+        "প্রতিষ্ঠিত ২০২৪ সালে",
+        "৫০০+ পার্টনার কোম্পানি",
+        "১২,০০০+ সক্রিয় চাকরি",
+        "২টি ভাষায় ব্যবহারযোগ্য"
+      ],
+      "gallery_title": "আমাদের অফিস ও টিম",
+      "timeline_title": "আমাদের যাত্রা",
+      "timeline": [
+        { "year": "২০২৪", "event": "চাকরি খোঁজা সহজ করার লক্ষ্য নিয়ে কোম্পানি প্রতিষ্ঠা।" },
+        { "year": "২০২৫", "event": "ডুয়াল ল্যাঙ্গুয়েজ সাপোর্টসহ উন্নত জব পোর্টাল চালু।" },
+        { "year": "২০২৬", "event": "১০ লাখ+ ব্যবহারকারী এবং আন্তর্জাতিক পর্যায়ে সম্প্রসারণ।" },
+        { "year": "২০২৭", "event": "এআই চালিত জব ম্যাচিং সিস্টেম চালু।" }
+      ]
+    },
+        "mission": {
+      "title": "আমাদের লক্ষ্য",
+      "desc": "আমাদের লক্ষ্য চাকরিপ্রার্থী এবং নিয়োগদাতাদের জন্য সেরা চাকরির প্ল্যাটফর্ম তৈরি করা।",
+      "vision_title": "আমাদের ভিশন",
+      "vision_desc": "বিশ্বব্যাপী প্রতিভাকে সুযোগের সাথে সংযুক্ত করা।",
+      "values_title": "আমাদের মূল মূল্যবোধ",
+      "values_list": [
+        "সততা ও স্বচ্ছতা",
+        "নবীনতা ও সৃজনশীলতা",
+        "ব্যবহারকারী-কেন্দ্রিক সমাধান",
+        "সহযোগিতা ও দলগত কাজ"
+      ]
+    },
         values: {
           title: "আমাদের মূল মূল্যবোধ",
           items: [
@@ -491,6 +556,14 @@ const resources = {
         partTime: "আংশিককালীন",
         internship: "ইন্টার্নশিপ",
       },
+       "reviews": {
+    "title": "কর্মকর্তাদের রিভিউ",
+    "count": "রিভিউ",
+    "emp1": { "text": "জন ফ্রন্টএন্ড ডেভেলপমেন্টে অসাধারণ।" },
+    "emp2": { "text": "আয়েশার ডিজাইনে দারুণ চোখ আছে।" },
+    "emp3": { "text": "রাহিম ক্লিন ব্যাকএন্ড কোড লেখেন।" },
+    "emp4": { "text": "সোফিয়া প্রজেক্ট দক্ষভাবে পরিচালনা করেন।" }
+  },
       trusted: {
       title: "প্রখ্যাত কোম্পানির দ্বারা বিশ্বাসযোগ্য",
     },
