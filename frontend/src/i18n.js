@@ -30,16 +30,22 @@ const resources = {
   workbridgeVideoDesc: "Watch this short video to know how WorkBridge helps thousands of job seekers.",
   videoNotSupported: "Your browser does not support the video tag."
       },
-      jobs: {
-         "title": "Available Jobs",
+      "jobs": {
+    "title": "Available Jobs",
     "loading": "Loading jobs...",
-    "error": "Failed to fetch jobs. Please try again.",
-    "noJobs": "No jobs available at the moment.",
+    "error": "Failed to load jobs.",
+    "noJobs": "No jobs available right now.",
     "salary": "Salary",
     "type": "Job Type",
-    "applyNow": "Apply Now"
-        
-      },
+    "applyNow": "Apply Now",
+    "applyFor": "Apply for",
+    "cancel": "Cancel",
+    "submitCv": "Submit CV",
+    "uploading": "Uploading...",
+    "selectFile": "Please select a CV file!",
+    "success": "CV uploaded successfully!",
+    "failed": "Failed to upload CV. Try again."
+  },
       home: {
         welcome: "Welcome to WorkBridge",
         tagline: "Find your dream job easily",
@@ -280,6 +286,9 @@ const resources = {
         partTime: "Part-time",
         internship: "Internship",
       },
+       "advertise": {
+    "title": "Featured Job Advertisements"
+  },
       
        trusted: {
        title: "Trusted by Leading Companies",
@@ -314,15 +323,22 @@ const resources = {
         workbridgeVideoDesc: "এই ছোট ভিডিওতে দেখুন কিভাবে WorkBridge হাজারো চাকরি প্রার্থীকে সহায়তা করছে।",
        videoNotSupported: "আপনার ব্রাউজার ভিডিও সাপোর্ট করে না।"
       },
-      jobs: {
-        "title": "উপলব্ধ চাকরি",
-    "loading": "চাকরি লোড হচ্ছে...",
-    "error": "চাকরি লোড করা যায়নি। আবার চেষ্টা করুন।",
-    "noJobs": "এই মুহূর্তে কোন চাকরি খালি নেই।",
+      "jobs": {
+    "title": "চাকরির তালিকা",
+    "loading": "চাকরির তথ্য লোড হচ্ছে...",
+    "error": "চাকরির তথ্য লোড করতে সমস্যা হয়েছে।",
+    "noJobs": "এখন কোন চাকরি নেই।",
     "salary": "বেতন",
     "type": "চাকরির ধরন",
-    "applyNow": "আবেদন করুন"
-      },
+    "applyNow": "এখনই আবেদন করুন",
+    "applyFor": "আবেদন করুন",
+    "cancel": "বাতিল",
+    "submitCv": "সিভি জমা দিন",
+    "uploading": "আপলোড হচ্ছে...",
+    "selectFile": "একটি সিভি ফাইল নির্বাচন করুন!",
+    "success": "সিভি সফলভাবে আপলোড হয়েছে!",
+    "failed": "সিভি আপলোড ব্যর্থ হয়েছে, আবার চেষ্টা করুন।"
+  },
       home: {
         welcome: "ওয়ার্কব্রিজ এ স্বাগতম",
         tagline: "সহজেই আপনার স্বপ্নের চাকরি খুঁজুন",
@@ -563,6 +579,10 @@ const resources = {
         partTime: "আংশিককালীন",
         internship: "ইন্টার্নশিপ",
       },
+      "advertise": {
+    "title": "বৈশিষ্ট্যপূর্ণ চাকরির বিজ্ঞাপন"
+  },
+      
       
       trusted: {
       title: "প্রখ্যাত কোম্পানির দ্বারা বিশ্বাসযোগ্য",

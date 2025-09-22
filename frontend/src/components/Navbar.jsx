@@ -90,17 +90,17 @@ export default function Navbar() {
                     onMouseEnter={() => setOpenDropdown(key)}
                     onMouseLeave={() => setOpenDropdown(null)}
                   >
-                    <button className="flex items-center font-semibold text-white hover:text-black transition-colors">
+                    <button className="flex items-center font-bold text-white hover:text-green transition-colors">
                       {t(`navbar.${key}`)}
                       <ChevronDownIcon className="ml-1 h-4 w-4" />
                     </button>
                     {openDropdown === key && (
-                      <div className="absolute mt-2 w-48 bg-white rounded-lg shadow-lg z-50">
+                      <div className="absolute mt-2 w-48 bg-green rounded-lg shadow-lg z-50">
                         {dropdown.map((item) => (
                           <Link
                             key={item.key}
                             to={item.path}
-                            className="block px-4 py-2 text-gray-700 hover:text-black hover:bg-gray-100 transition-colors"
+                            className="block px-4 py-2 text-gray-700 hover:text-green hover:bg-gray-100 transition-colors"
                           >
                             {t(`navbar.${item.key}`)}
                           </Link>
@@ -112,7 +112,7 @@ export default function Navbar() {
                   <Link
                     key={key}
                     to={path}
-                    className="font-semibold text-white hover:text-black transition-colors"
+                    className="font-semibold text-green hover:text-green-950 transition-colors"
                   >
                     {t(`navbar.${key}`)}
                   </Link>
@@ -149,8 +149,8 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         <div
-          className={`md:hidden bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 px-4 pt-4 pb-3 space-y-3 transition-all duration-300 ${
-            isOpen ? "max-h-96 opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
+          className={`md:hidden bg-gradient-to-r from-blue-600 via-purple-800 to-pink-500 px-4 pt-4 pb-3 space-y-3 transition-all duration-300 ${
+            isOpen ? "max-lg: opacity-100 scale-100" : "max-h-0 opacity-0 scale-95"
           }`}
         >
           {navLinks.map(({ key, path, dropdown }) =>

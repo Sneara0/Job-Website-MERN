@@ -8,6 +8,12 @@ const Jobs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
+  // === Modal states ===
+  const [showModal, setShowModal] = useState(false);
+  const [selectedJob, setSelectedJob] = useState(null);
+  const [cvFile, setCvFile] = useState(null);
+  const [uploading, setUploading] = useState(false);
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
@@ -22,6 +28,35 @@ const Jobs = () => {
     };
     fetchJobs();
   }, [t]);
+
+  // === Handle CV Upload ===
+  const handleCvSubmit = async (e) => {
+    e.preventDefault();
+    if (!cvFile) {
+      alert(t("jobs.selectFile"));
+      return;
+    }
+
+    const formData = new FormData();
+    formData.append("cv", cvFile);
+    formData.append("jobId", selectedJob._id);
+
+    try {
+      setUploading(true);
+      await axios.post("http://localhost:5000/api/apply", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+
+      alert(t("jobs.success"));
+      setShowModal(false);
+      setCvFile(null);
+    } catch (err) {
+      console.error("Error uploading CV:", err);
+      alert(t("jobs.failed"));
+    } finally {
+      setUploading(false);
+    }
+  };
 
   if (loading) {
     return (
@@ -69,11 +104,52 @@ const Jobs = () => {
                 </p>
               </div>
 
-              <button className="mt-5 w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
+              <button
+                onClick={() => {
+                  setSelectedJob(job);
+                  setShowModal(true);
+                }}
+                className="mt-5 w-full py-2 px-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition"
+              >
                 {t("jobs.applyNow")}
               </button>
             </div>
           ))}
+        </div>
+      )}
+
+      {/* === CV Upload Modal === */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-xl shadow-lg p-6 w-[90%] md:w-[500px]">
+            <h2 className="text-xl font-bold mb-4">
+              {t("jobs.applyFor")} {selectedJob?.title}
+            </h2>
+            <form onSubmit={handleCvSubmit} className="space-y-4">
+              <input
+                type="file"
+                accept=".pdf,.doc,.docx"
+                onChange={(e) => setCvFile(e.target.files[0])}
+                className="w-full border p-2 rounded"
+              />
+              <div className="flex justify-end gap-3">
+                <button
+                  type="button"
+                  onClick={() => setShowModal(false)}
+                  className="px-4 py-2 bg-gray-300 rounded-lg"
+                >
+                  {t("jobs.cancel")}
+                </button>
+                <button
+                  type="submit"
+                  disabled={uploading}
+                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
+                >
+                  {uploading ? t("jobs.uploading") : t("jobs.submitCv")}
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
       )}
     </div>

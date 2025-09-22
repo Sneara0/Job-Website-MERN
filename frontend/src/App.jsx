@@ -16,7 +16,7 @@ import Team from "./pages/About/Team";
 import TrustedCompanies from './components/TrustedCompanies.jsx';
 import FeaturedJobs from "./components/FeaturedJobs.jsx"
 import HireSection from './components/HireSection.jsx';
-
+import CvBanner from './components/CvBanner.jsx'
 
 
 import Advertise from "./components/Advertise.jsx"
@@ -26,6 +26,8 @@ function App() {
   return (
     <>
       <Navbar/>
+      <CvBanner/>
+      
       
       
 
@@ -35,6 +37,7 @@ function App() {
         <Route path="/jobs" element={<Jobs />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+         
 
   <Route path="/services/:service" element={<ServiceDetails />} />
     <Route path="/courses/:course" element={<CourseDetails />} />
