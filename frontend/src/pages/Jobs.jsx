@@ -17,7 +17,8 @@ const Jobs = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/jobs");
+        // ✅ Backend URL from .env
+        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/jobs`);
         setJobs(res.data);
       } catch (err) {
         setError(t("jobs.error"));
@@ -43,9 +44,13 @@ const Jobs = () => {
 
     try {
       setUploading(true);
-      await axios.post("http://localhost:5000/api/apply", formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/apply`,
+        formData,
+        {
+          headers: { "Content-Type": "multipart/form-data" },
+        }
+      );
 
       alert(t("jobs.success"));
       setShowModal(false);
