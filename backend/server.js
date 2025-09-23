@@ -19,8 +19,9 @@ const app = express();
 
 // ✅ Allowed frontend URLs
 const allowedOrigins = [
-  "http://localhost:5173",                   // Local frontend
-  process.env.CLIENT_URL?.replace(/\/$/, ""), // Production frontend from .env
+  "http://localhost:5173",     
+ "https://job-website-drab.vercel.app"    
+
 ];
 
 // ✅ CORS setup
@@ -31,6 +32,8 @@ app.use(
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
+        console.log ( " Blocked by Cors policy: ", origin);
+        
         callback(new Error("Not allowed by CORS"));
       }
     },
