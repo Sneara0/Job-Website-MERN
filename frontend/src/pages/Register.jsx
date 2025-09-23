@@ -8,8 +8,12 @@ const Register = () => {
     name: "",
     email: "",
     password: "",
-    role: "user", // default role
+    role: "user",
   });
+
+  const LOCAL_API = "http://localhost:5000";
+  const DEPLOY_API = "https://job-website-mern.onrender.com";
+  const API_URL = window.location.hostname === "localhost" ? LOCAL_API : DEPLOY_API;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,10 +22,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
-        formData
-      );
+      const res = await axios.post(`${API_URL}/api/auth/register`, formData);
       alert(t("register.registrationSuccess"));
       console.log(res.data);
     } catch (error) {
@@ -32,13 +33,8 @@ const Register = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-6">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md"
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-          {t("register.title")}
-        </h2>
+      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">{t("register.title")}</h2>
 
         <input
           type="text"

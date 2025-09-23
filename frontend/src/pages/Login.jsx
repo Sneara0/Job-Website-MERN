@@ -6,10 +6,11 @@ import { useTranslation } from "react-i18next";
 const Login = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
-  const [formData, setFormData] = useState({
-    email: "",
-    password: "",
-  });
+  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const LOCAL_API = "http://localhost:5000";
+  const DEPLOY_API = "https://job-website-mern.onrender.com";
+  const API_URL = window.location.hostname === "localhost" ? LOCAL_API : DEPLOY_API;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,20 +19,17 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/api/auth/login", formData);
-
-      // Save user info in localStorage
+      const res = await axios.post(`${API_URL}/api/auth/login`, formData);
       localStorage.setItem("token", res.data.token);
-      localStorage.setItem("role", res.data.user.role); // <-- use res.data.user
-      localStorage.setItem("name", res.data.user.name); // <-- use res.data.user
+      localStorage.setItem("role", res.data.user.role);
+      localStorage.setItem("name", res.data.user.name);
 
       alert(t("login.success"));
 
-      // Redirect based on role
       if (res.data.user.role === "admin") {
-        navigate("/dashboard"); // Admin dashboard page
+        navigate("/dashboard");
       } else {
-        navigate("/jobs"); // User sees jobs page
+        navigate("/jobs");
       }
     } catch (error) {
       alert(t("login.failed"));
@@ -41,13 +39,8 @@ const Login = () => {
 
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 px-4 sm:px-6">
-      <form
-        onSubmit={handleSubmit}
-        className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md"
-      >
-        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">
-          {t("login.title")}
-        </h2>
+      <form onSubmit={handleSubmit} className="bg-white p-6 sm:p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-center">{t("login.title")}</h2>
 
         <input
           type="email"

@@ -8,17 +8,22 @@ const Jobs = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  // === Modal states ===
   const [showModal, setShowModal] = useState(false);
   const [selectedJob, setSelectedJob] = useState(null);
   const [cvFile, setCvFile] = useState(null);
   const [uploading, setUploading] = useState(false);
 
+  // ✅ Local + Deploy URLs
+  const LOCAL_API = "http://localhost:5000";
+  const DEPLOY_API = "https://job-website-mern.onrender.com";
+
+  // Auto choose API based on environment
+  const API_URL = window.location.hostname === "localhost" ? LOCAL_API : DEPLOY_API;
+
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        // ✅ Backend URL from .env
-        const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/jobs`);
+        const res = await axios.get(`${API_URL}/api/jobs`);
         setJobs(res.data);
       } catch (err) {
         setError(t("jobs.error"));
@@ -28,9 +33,8 @@ const Jobs = () => {
       }
     };
     fetchJobs();
-  }, [t]);
+  }, [API_URL, t]);
 
-  // === Handle CV Upload ===
   const handleCvSubmit = async (e) => {
     e.preventDefault();
     if (!cvFile) {
@@ -44,14 +48,9 @@ const Jobs = () => {
 
     try {
       setUploading(true);
-      await axios.post(
-        `${import.meta.env.VITE_API_URL}/api/apply`,
-        formData,
-        {
-          headers: { "Content-Type": "multipart/form-data" },
-        }
-      );
-
+      await axios.post(`${API_URL}/api/apply`, formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
       alert(t("jobs.success"));
       setShowModal(false);
       setCvFile(null);
@@ -63,27 +62,23 @@ const Jobs = () => {
     }
   };
 
-  if (loading) {
+  if (loading)
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <p className="text-lg text-gray-600 animate-pulse">{t("jobs.loading")}</p>
       </div>
     );
-  }
 
-  if (error) {
+  if (error)
     return (
       <div className="min-h-screen flex items-center justify-center bg-gray-50">
         <p className="text-red-500 font-medium">{error}</p>
       </div>
     );
-  }
 
   return (
     <div className="min-h-screen bg-gray-50 px-6 py-10">
-      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">
-        {t("jobs.title")}
-      </h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-center mb-10">{t("jobs.title")}</h1>
 
       {jobs.length === 0 ? (
         <p className="text-center text-gray-600">{t("jobs.noJobs")}</p>
@@ -97,16 +92,11 @@ const Jobs = () => {
               <h2 className="text-xl font-semibold mb-2 text-gray-800">{job.title}</h2>
               <p className="text-blue-600 font-medium mb-1">{job.company}</p>
               <p className="text-gray-500 text-sm">{job.location}</p>
-
               <p className="text-gray-700 mt-3 line-clamp-3">{job.description}</p>
 
               <div className="mt-4 flex flex-col gap-1 text-sm">
-                <p className="text-green-600 font-medium">
-                  {t("jobs.salary")}: ${job.salary}
-                </p>
-                <p className="text-gray-600">
-                  {t("jobs.type")}: {job.type}
-                </p>
+                <p className="text-green-600 font-medium">{t("jobs.salary")}: ${job.salary}</p>
+                <p className="text-gray-600">{t("jobs.type")}: {job.type}</p>
               </div>
 
               <button
@@ -123,13 +113,10 @@ const Jobs = () => {
         </div>
       )}
 
-      {/* === CV Upload Modal === */}
       {showModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-xl shadow-lg p-6 w-[90%] md:w-[500px]">
-            <h2 className="text-xl font-bold mb-4">
-              {t("jobs.applyFor")} {selectedJob?.title}
-            </h2>
+            <h2 className="text-xl font-bold mb-4">{t("jobs.applyFor")} {selectedJob?.title}</h2>
             <form onSubmit={handleCvSubmit} className="space-y-4">
               <input
                 type="file"
@@ -138,20 +125,8 @@ const Jobs = () => {
                 className="w-full border p-2 rounded"
               />
               <div className="flex justify-end gap-3">
-                <button
-                  type="button"
-                  onClick={() => setShowModal(false)}
-                  className="px-4 py-2 bg-gray-300 rounded-lg"
-                >
-                  {t("jobs.cancel")}
-                </button>
-                <button
-                  type="submit"
-                  disabled={uploading}
-                  className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition"
-                >
-                  {uploading ? t("jobs.uploading") : t("jobs.submitCv")}
-                </button>
+                <button type="button" onClick={() => setShowModal(false)} className="px-4 py-2 bg-gray-300 rounded-lg">{t("jobs.cancel")}</button>
+                <button type="submit" disabled={uploading} className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition">{uploading ? t("jobs.uploading") : t("jobs.submitCv")}</button>
               </div>
             </form>
           </div>
