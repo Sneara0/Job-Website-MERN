@@ -17,23 +17,19 @@ connectDB();
 
 const app = express();
 
-// ✅ Allowed frontend URLs
 const allowedOrigins = [
-  "http://localhost:5173",     
- "https://job-website-drab.vercel.app"    
-
+  "http://localhost:5173",                   
+  process.env.CLIENT_URL?.replace(/\/$/, ""), 
 ];
 
 // ✅ CORS setup
 app.use(
   cors({
     origin: function (origin, callback) {
-      // Postman or server-to-server request এ origin undefined হতে পারে
+    
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
-        console.log ( " Blocked by Cors policy: ", origin);
-        
         callback(new Error("Not allowed by CORS"));
       }
     },
@@ -67,7 +63,7 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Internal Server Error" });
 });
 
-// ✅ Start server
+
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`✅ Server running on port ${PORT}`);
