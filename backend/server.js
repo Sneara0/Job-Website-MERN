@@ -17,16 +17,17 @@ connectDB();
 
 const app = express();
 
-
+// ✅ Allowed frontend URLs
 const allowedOrigins = [
-  process.env.CLIENT_URL?.replace(/\/$/, ""), 
-  "http://localhost:5173",                     
+  "http://localhost:5173",                   // Local frontend
+  process.env.CLIENT_URL?.replace(/\/$/, ""), // Production frontend from .env
 ];
 
+// ✅ CORS setup
 app.use(
   cors({
     origin: function (origin, callback) {
-    
+      // Postman or server-to-server request এ origin undefined হতে পারে
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
       } else {
